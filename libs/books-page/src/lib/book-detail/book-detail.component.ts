@@ -26,7 +26,7 @@ export class BookDetailComponent {
       this.bookForm.setValue({
         name: book.name,
         earnings: book.earnings,
-        description: book.description,
+        description: book.description ?? '',
       });
 
       this.originalBook = book;
