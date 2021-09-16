@@ -33,7 +33,7 @@
       <div class="bookHeader">
         <h3>{{ book.name }}</h3>
         <bco-book-actions
-          [isOnSmallDevice]="true"
+          [isOnSmallDevice]="booksListStore.isOnSmallDevice$ | async"
           (selectBook)="booksListStore.onSelectBook(book)"
           (deleteBook)="booksListStore.onDeleteBook(book)"
         ></bco-book-actions>
