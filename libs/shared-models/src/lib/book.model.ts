@@ -1,7 +1,7 @@
 export interface BookModel {
   id: string;
   name: string;
-  earnings: number;
+  earnings: string;
   description?: string;
 }
 
@@ -27,6 +27,6 @@ export function sortBooks(
   }
 
   return books.sort((a, b) => {
-    return direction * (b.earnings - a.earnings);
+    return direction * (parseInt(b.earnings, 10) - parseInt(a.earnings, 10));
   });
 }

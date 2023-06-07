@@ -14,7 +14,7 @@ export class BookDetailComponent {
 
   bookForm = new FormGroup({
     name: new FormControl(''),
-    earnings: new FormControl(0),
+    earnings: new FormControl('0'),
     description: new FormControl(''),
   });
 
