@@ -29,13 +29,13 @@
     </mat-button-toggle-group>
   </mat-card-header>
   <mat-card-content>
-    <div *ngFor="let book of books" class="book">
+    <div *ngFor="let book of booksListStore.sortedBooks$ | async" class="book">
       <div class="bookHeader">
         <h3>{{ book.name }}</h3>
         <bco-book-actions
           [isOnSmallDevice]="true"
-          (selectBook)="select.emit(book)"
-          (deleteBook)="delete.emit(book)"
+          (selectBook)="booksListStore.onSelectBook(book)"
+          (deleteBook)="booksListStore.onDeleteBook(book)"
         ></bco-book-actions>
       </div>
       <p>
